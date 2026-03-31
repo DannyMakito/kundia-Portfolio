@@ -33,7 +33,6 @@ export function ProjectList({ projects, onNavigate }: ProjectListProps) {
       if (!scrollWrapperRef.current) return;
       
       const scrollHeight = document.documentElement.scrollHeight;
-      const windowHeight = window.innerHeight;
       const scrollTop = window.scrollY;
       
       // Calculate the exact height of one "set" of projects

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { FloatingImages } from '@/components/FloatingImages';
 import { TeamDiagram } from '@/components/TeamDiagram';
-import { BookPopup } from '@/components/BookPopup';
 import { servicesFloatingImages } from '@/data/projects';
 
 export function ServicesPage() {
