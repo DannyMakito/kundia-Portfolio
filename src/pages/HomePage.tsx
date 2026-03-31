@@ -19,22 +19,46 @@ export function HomePage() {
     // Split text into lines and wrap each line in a div with overflow hidden
     const lines = text.split('<br>');
     heading.innerHTML = lines.map(line => 
-      `<div class="overflow-hidden"><span class="inline-block translate-y-full">${line.trim()}</span></div>`
+      `<div class="overflow-hidden"><span class="inline-block">${line.trim()}</span></div>`
     ).join('');
 
     const spans = heading.querySelectorAll('span');
 
-    gsap.to(spans, {
-      y: 0,
-      duration: 0.9,
-      ease: 'power3.out',
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: heading,
-        start: 'top 80%',
-        toggleActions: 'play none none none',
-      },
+    // Set initial state based on device
+    const isMobile = window.innerWidth < 768;
+    
+    gsap.set(spans, { 
+      y: isMobile ? '100%' : '0%',
+      opacity: isMobile ? 1 : 0 
     });
+
+    // Mobile: reveal on page load / Desktop: reveal on scroll
+    if (isMobile) {
+      gsap.to(spans, {
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.15,
+        delay: 0.3,
+      });
+    } else {
+      gsap.fromTo(
+        spans,
+        { y: 60, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.9,
+          ease: 'power3.out',
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: heading,
+            start: 'top 80%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    }
 
     return () => {
       ScrollTrigger.getAll().forEach(st => st.kill());
@@ -45,8 +69,7 @@ export function HomePage() {
     <div className="min-h-screen bg-white">
     
 
-      {/* Section 1: Video Hero - Full Screen */}
-      <section className="relative w-full h-screen overflow-hidden bg-black">
+         <section className="relative w-full h-screen overflow-hidden bg-black">
         <video
           autoPlay
           muted
@@ -56,7 +79,8 @@ export function HomePage() {
           poster="/images/homepage/video-poster.jpg"
         >
           <source src="/images/homepage/HOS.mp4" type="video/mp4" />
-        </video>
+        </video>{/* Section 1: Video Hero - Full Screen */}
+   
 
         {/* Scroll indicator */}
         <motion.div

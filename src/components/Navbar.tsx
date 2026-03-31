@@ -14,7 +14,7 @@ const navItems = [
 
 const rightNavItems = [
   { label: 'SERVICES', path: '/services' },
-  { label: 'INSIGHTS', path: '#' },
+  { label: 'ABOUT', path: '/about' },
   { label: 'CONTACT', path: '/contact' },
 ];
 
@@ -77,7 +77,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
                   isScrolled
                     ? currentPath === item.path
                       ? 'text-white'
-                      : 'text-whitew/70'
+                      : 'text-white/70'
                     : currentPath === item.path
                       ? 'text-white'
                       : 'text-white/70'
@@ -100,7 +100,7 @@ export function Navbar({ onNavigate }: NavbarProps) {
                 } ${
                   isScrolled
                     ? currentPath === item.path
-                      ? 'text-black'
+                      ? 'text-white '
                       : 'text-white/70'
                     : currentPath === item.path
                       ? 'text-white'
@@ -119,9 +119,9 @@ export function Navbar({ onNavigate }: NavbarProps) {
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className={`w-6 h-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
+              <X className="w-6 h-6 text-white" />
             ) : (
-              <Menu className={`w-6 h-6 ${isScrolled ? 'text-black' : 'text-white'}`} />
+              <Menu className="w-6 h-6 text-white" />
             )}
           </button>
         </nav>

@@ -41,12 +41,12 @@ export function ProjectDetailPage() {
           initial={{ opacity: 0, scale: 0.98 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
-          className="w-full h-[50vh] lg:h-[60vh] overflow-hidden"
+          className="w-full lg:max-w-5xl lg:mx-auto h-[50vh] lg:h-[60vh] overflow-hidden"
         >
           <img
             src="/images/projects/gun.png"
             alt="Louis Vuitton Trunks"
-            className="w-full h-full object-fit"
+            className="w-full h-full object-cover"
           />
         </motion.div>
 
@@ -65,11 +65,11 @@ export function ProjectDetailPage() {
             </h2>
             
             <p className="text-xs font-medium uppercase tracking-widest text-gray-500 mb-6">
-              Through AI-Driven Narrative Production
+              Through inovatative  Narrative Production
             </p>
             
             <p className="text-sm leading-relaxed text-gray-700 mb-4">
-              Detroit collaborated with <strong>Louis Vuitton</strong> to design <em>Enigma</em>, a refined digital game created to 
+               House solique collaborated with <strong>Louis Vuitton</strong> to design <em>Enigma</em>, a refined digital game created to 
               celebrate the first anniversary of the House's Discord platform and strengthen its community 
               culture.
             </p>
@@ -81,7 +81,7 @@ export function ProjectDetailPage() {
             </p>
             
             <p className="text-sm leading-relaxed text-gray-700 mb-4">
-              A hybrid production combining AI-driven content creation, narrative design, visual effects, 
+              A hybrid production combining design content creation, narrative design, visual effects, 
               and post-production enabled the creation of a playful yet elegant universe, fully aligned with 
               Louis Vuitton's codes.
             </p>
