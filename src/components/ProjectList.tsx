@@ -25,7 +25,7 @@ export function ProjectList({ projects, onNavigate }: ProjectListProps) {
   const setLength = projects.length;
 
   // Responsive staircase widths (using vw so it scales down perfectly on mobile)
-  const staircaseWidths = ['35vw', '25vw', '15vw', '8vw'];
+  const staircaseWidths = ['45vw', '35vw', '25vw', '12vw'];
 
   // Handle the invisible scroll jumps for the infinite loop
   useEffect(() => {
